@@ -1,15 +1,15 @@
 def Fah_to_Cel(f): 
-   return f, ' grados F equivale a ', 5*(float(f)-32)/9, ' C'
+   return f, ' grados F equivale a ', round(5*(float(f)-32)/9,3), ' C'
 def Cel_to_Fah(c):
-   return c, ' grados C equivale a ', 9*float(c)/5 + 32, ' F'
+   return c, ' grados C equivale a ', round(9*float(c)/5 + 32,3), ' F'
 def Kel_to_Cel(k):
-   return k, ' grados K equivale a ', k-273.15 ,' C'
+   return k, ' grados K equivale a ', round(k-273.15,3) ,' C'
 def Cel_to_Kel(c):
-   return c, ' grados C equivale a ', c+273.15 ,' K'
+   return c, ' grados C equivale a ', round(c+273.15,3) ,' K'
 def Kel_to_Fah(k):
-   return k, ' grados K equivale a ', 9*(k-273.15)/5 + 32,' F'
+   return k, ' grados K equivale a ', round(9*(k-273.15)/5 + 32,3),' F'
 def Fah_to_Kel(f):
-   return f, ' grados F equivale a ', 5*(f-32.0)/9 + 273.15,' K'
+   return f, ' grados F equivale a ', round(5*(f-32.0)/9 + 273.15,3),' K'
 
 print '''---------------------------\n
 CONVERSION ENTRE TEMPERATURAS       \n
