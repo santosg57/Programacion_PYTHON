@@ -36,19 +36,4 @@ op = input('Opcion que deseas convertir:')
 
 if(1 <= op and op <= 6):
    val = input('Introduce el valora convertir:')
-   if (op == 1):
-      print tem[1](val)
-   elif (op == 2):
-      print '\n\n',tem[2](val)
-   elif (op == 3):
-      print '\n\n',tem[3](val)
-   elif (op == 4):
-      print '\n\n',tem[4](val)
-   elif (op == 5):
-      print '\n\n',tem[5](val)
-   else:
-      print '\n\n',tem[6](val)
-
-
-
-
+   print tem[opt](val)
