@@ -35,5 +35,5 @@ TERMINAR ---------------- 7 \n '''
 op = input('Opcion que deseas convertir:')
 
 if(1 <= op and op <= 6):
-   val = input('Introduce el valora convertir:')
+   val = input('Introduce el valora convertir126666666666:')
    print tem[opt](val)
