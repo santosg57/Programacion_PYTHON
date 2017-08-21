@@ -1,0 +1,499 @@
+\documentclass{beamer}
+
+% https://es.wikipedia.org/wiki/Sistema_de_numeraci%C3%B3n
+
+\usetheme{Boadilla}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usetikzlibrary{trees}
+
+% Instituto de Neurobiolog\'ia \\ UNAM - M\'exico
+
+\newcommand\nombre{Juan Per\'ez}
+\newcommand\depto{Computaci\'on}
+\newcommand\instituto{Instituto de Computaci\'on}
+\newcommand\correo{juanito@gmail.com}
+\newcommand\iniciales{COMPU}
+
+\newtheorem{mytheorem}{Theorem}
+\newtheorem{mylemma}{Lemma}
+\newtheorem{mycorollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{mydefinition}{Definition}
+\newtheorem{historylabel}{Historycal label}
+\newtheorem{myexample}{Example}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newcommand{\bR}{{\mathbf{R}}}
+\newcommand{\bC}{{\mathbf{C}}}
+\newcommand{\bT}{{\mathbf{T}}}
+\newcommand{\bZ}{{\mathbf{Z}}}
+\newcommand{\myemph}[1]{\alert{#1}}
+\newcommand{\essinf}{\mathop{\mathrm{ess\,inf}}}
+\renewcommand{\phi}{\varphi}
+\newcommand{\eps}{\varepsilon}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\Range}{Im}
+\DeclareMathOperator{\mes}{mes}
+
+\tikzstyle{thinarrow}=[densely dashed,very thin]
+
+\title[CLASE-2]
+{\mbox{Introducci\'on al Lenguaje de Programaci\'on}\\\mbox{PYTHON}}
+\author[juanito55@gmail.com]{\nombre \\
+{\small \correo}}
+\institute[\iniciales]{\instituto}
+\date{\today}
+
+\hypersetup{pdfkeywords={Hermitian Toeplitz matrices,eigenvectors,asymptotics}}
+
+\AtBeginSection[] {
+\begin{frame}{Contenido}
+\tableofcontents[currentsection]
+\end{frame}
+}
+
+%===============================================
+
+\begin{document}
+
+\begin{frame}[label=titlepage]
+\titlepage
+
+\end{frame}
+%===============================================
+
+%\begin{frame}{Contents}
+%\tableofcontents
+
+%\end{frame}
+
+%===============================================
+% http://docs.python.org.ar/tutorial/2/introduction.html
+
+\section{N\'umeros}
+
+\subsection{N\'umeros}
+
+\begin{frame}{N\'umeros}
+
+$>>>$ ancho = 20
+
+$>>>$ largo = 5*9
+
+$>>>$ ancho * largo
+
+900
+
+%\rule{\textwidth}{1pt}
+
+$>>>$ 3 * 3.75 / 1.5
+
+7.5
+
+$>>>$ 7.0 / 2
+
+3.5
+
+$>>>$ 1j * complex(0,1)
+
+(-1+0j)
+
+$>>>$ 3+1j*3
+
+(3+3j)
+
+$>>>$ (3+1j)*3
+
+(9+3j)
+
+$>>>$ (1+2j)/(1+1j)
+
+(1.5+0.5j)
+
+\end{frame}
+
+\begin{frame}{N\'umeros}
+
+$>>>$ a=1.5+0.5j
+
+$>>>$ a.real
+
+1.5
+
+$>>>$ a.imag
+
+0.5
+
+$>>>$ a=3.0+4.0j
+
+$>>>$ abs(a)  %# sqrt(a.real**2 + a.imag**2)
+
+5.0
+
+
+
+
+
+
+\end{frame}
+
+\begin{frame}{N\'umeros Enteros}
+
+$>>>$ impuesto = 12.5 / 100
+
+$>>>$ precio = 100.50
+
+$>>>$ precio * impuesto
+
+12.5625
+
+$>>>$ precio + \_
+
+113.0625
+
+$>>>$ round(\_, 2)
+
+113.06
+
+\end{frame}
+
+\section{Cadenas de caracteres}
+
+\subsection{Cadenas de caracteres}
+
+\begin{frame}{Cadenas de caracteres}
+
+$>>>$ 'huevos y pan'
+
+'huevos y pan'
+
+$>>>$ "doesn't"
+
+"doesn't"
+
+$>>>$ '"Si," le dijo.'
+
+'"Si," le dijo.'
+
+\end{frame}
+
+\begin{frame}{Cadenas de caracteres}
+
+$>>>$ hola = "Esta es una larga cadena que contiene \textbackslash n \textbackslash
+
+varias l\'ineas de texto, tal y como se hace en C. \textbackslash n \textbackslash
+
+    Notar que los espacios en blanco al principio de la linea \textbackslash
+
+ son significantes."
+
+$>>>$ print hola
+
+$>>>$ palabra = 'Ayuda' + 'A'
+
+$>>>$ palabra
+
+'AyudaA'
+
+$>>>$ '$<$' + palabra*5 + '$>$'
+
+'$<$AyudaAAyudaAAyudaAAyudaAAyudaA$>$'
+
+\end{frame}
+
+\begin{frame}{Cadenas de caracteres}
+
+$>>>$ palabra[4]
+
+'a'
+
+$>>>$ palabra[0:2]
+
+'Ay'
+
+$>>>$ palabra[2:4]
+
+'ud'
+
+$>>>$ palabra[:2]    
+
+'Ay'
+
+$>>>$ palabra[2:]    
+
+'udaA'
+
+\end{frame}
+
+
+\begin{frame}{Cadenas de caracteres}
+
+$>>>$ 'x' + palabra[1:]
+
+'xyudaA'
+
+$>>>$ 'Mas' + palabra[5]
+
+'MasA'
+
+$>>>$ palabra[-1]  
+   
+'A'
+
+$>>>$ palabra[-2]     
+
+'a'
+
+$>>>$ palabra[-2:]    
+
+'aA'
+
+$>>>$ palabra[:-2]    
+
+'Ayud'
+
+
+\end{frame}
+
+\section{Listas}
+
+\subsection{Listas}
+
+\begin{frame}{Listas}
+
+$>>>$ a = ['pan', 'huevos', 100, 1234]
+
+$>>>$ a
+
+['pan', 'huevos', 100, 1234]
+
+$>>>$ a[0]
+
+'pan'
+
+$>>>$ a[3]
+
+1234
+
+$>>>$ a[-2]
+
+100
+
+$>>>$ a[1:-1]
+
+['huevos', 100]
+
+$>>>$ a[:2] + ['carne', 2*2]
+
+['pan', 'huevos', 'carne', 4]
+
+$>>>$ 3*a[:3] + ['Boo!']
+
+['pan', 'huevos', 100, 'pan', 'huevos', 100, 'pan', 'huevos', 100, 'Boo!']
+
+\end{frame}
+
+\begin{frame}{Listas}
+
+$>>>$ a
+
+['pan', 'huevos', 100, 1234]
+
+$>>>$ a[2] = a[2] + 23
+
+$>>>$ a
+
+['pan', 'huevos', 123, 1234]
+
+$>>>$ a[0:2] = [1, 12]
+
+$>>>$ a
+
+[1, 12, 123, 1234]
+
+$>>>$ a[0:2] = []
+
+$>>>$ a
+
+[123, 1234]
+
+$>>>$ a[1:1] = ['bruja', 'xyzzy']
+
+$>>>$ a
+
+[123, 'bruja', 'xyzzy', 1234]
+
+$>>>$ a[:0] = a
+
+$>>>$ a
+
+[123, 'bruja', 'xyzzy', 1234, 123, 'bruja', 'xyzzy', 1234]
+
+$>>>$  a[:] = []
+
+$>>>$ a
+
+[]
+
+\end{frame}
+
+
+\section{Operadores en Python}
+
+\subsection{Operadores lógicos}
+
+\begin{frame}{Operadores l\'ogicos}
+
+\begin{center}
+\[
+\begin{tabular}{|c|c|l| }
+\hline
+ \textbf{Operador} & \textbf{Descripci\'on} &	\textbf{Ejemplo} \\
+ \hline
+and	& se cumple a y b? & 	r=True and False = r es False \\
+\hline
+or	& 	se cumple a o b?		&  r=True or False = r es True \\
+\hline
+not	& 	No a 	& 	r=not True = r es False \\
+\hline
+ \end{tabular}
+\]
+\end{center}
+
+\end{frame}
+
+\subsection{Operadores relacionales}
+
+\begin{frame}{Operadores relacionales}
+
+\begin{center}
+\[
+\begin{tabular}{|c|c|l| }
+\hline
+ \textbf{Operador} & \textbf{Descripci\'on} &	\textbf{Ejemplo} \\
+ \hline
+$==$ & Son iguales a y b?  & 	r=5 $== $ 3 = r es False  \\
+$!=$  & Son distintos a y b?	  & r=5 $!=$ 3 =  r es True  \\
+$<$  & 	Es a menor que b?  & 	r=5 $<$ 3 = r es False \\
+$>$  & 	Es a mayor que b?  & 	r=5 $>$ 3 = r es True \\
+$<=$  & Es a menor o igual que b?  & 	r=5 $<=$ 5 = r es True \\
+$>=$  & Es a mayor o igual que b?  & 	r=5 $>=$ 3 = r es True \\
+\hline
+ \end{tabular}
+\]
+\end{center}
+
+\end{frame}
+
+\subsection{Operadores aritm\'eticos}
+
+\begin{frame}{Operadores aritm\'eticos}
+
+\begin{center}
+\[
+\begin{tabular}{|c|c|l| }
+\hline
+ \textbf{Operador} & \textbf{Descripci\'on} &	\textbf{Ejemplo} \\
+ \hline
+$+$ &	Suma	 &	r=3+2 = r es 5  \\
+$-$ &		Resta	 &	r=4-7  =  r es -3 \\
+$-$ &		Negación	 &	r=-7  =  r es -7 \\
+$*$ &		Multiplicación	 &	r=2*6  =  r es 12 \\
+$**$	 &	Exponente	 &	r=2**6  = r es 64 \\
+$/$ &		División	  &	r=3.5/2  =  r es 1.75 \\
+$//$	 &	División Entera	 &	r=3.5 $//$ 2  = r es 1.0 \\
+$\%$	 &	Módulo	 &	r=7 \% 2 = r es 1 \\
+\hline
+ \end{tabular}
+\]
+\end{center}
+
+\end{frame}
+
+
+\subsection{Operadores a nivel de Bit}
+
+\begin{frame}{Operadores a nivel de Bit}
+
+\begin{center}
+\[
+\begin{tabular}{|c|c|l| }
+\hline
+ \textbf{Operador} & \textbf{Descripci\'on} &	\textbf{Ejemplo} \\
+ \hline
+$\&$ & 	and	 & r=3 \& 2 = r es 2  \\
+$|$  & 	or	 & r=3 $|$ 2 = r es 3 \\
+.	 & xor	 & r=3 . 2 = r es 1 \\
+.	 & not & 	r=.3 = r es -4 \\
+$<<$	 & Desplazamiento a la izquierda & 	r=3 $<<$ 1 = r es 6 \\
+$>>$	 & Desplazamiento a la derecha	 & r=3 $>>$1 = r es 1 \\
+\hline
+ \end{tabular}
+\]
+\end{center}
+
+\end{frame}
+
+\section{Estructuras de Control}
+
+% http://docs.python.org.ar/tutorial/2/controlflow.html
+
+\subsection{La sentencia if}
+
+\begin{frame}{La sentencia \textbf{if}}
+
+$>>>$ x = int(raw\_input("Ingresa un entero, por favor: "))
+
+Ingresa un entero, por favor: 42
+
+$>>>$ if x $<$ 0:
+
+...      x = 0
+
+...      print 'Negativo cambiado a cero'
+
+... elif x $==$ 0:
+
+...      print 'Cero'
+
+... elif x $==$ 1:
+
+...      print 'Simple'
+
+... else:
+
+...      print 'Mas'
+
+...
+
+'Mas'
+
+\end{frame}
+
+\subsection{La sentencia for}
+
+\begin{frame}{La sentencia \textbf{for}}
+
+$>>>$ a = ['gato', 'ventana', 'defenestrado']
+
+$>>>$ for x in a:
+
+...     print x, len(x)
+
+...
+
+gato 4
+
+ventana 7
+
+defenestrado 12
+
+\end{frame}
+
+
+
+\end{document}
