@@ -1,0 +1,27 @@
+>>> import pandas as pd
+>>> dir
+<built-in function dir>
+>>> dir(pd)
+['Categorical', 'CategoricalIndex', 'DataFrame', 'DateOffset', 'DatetimeIndex', 'ExcelFile', 'ExcelWriter', 'Expr', 
+'Float64Index', 'Grouper', 'HDFStore', 'Index', 'IndexSlice', 'Int64Index', 'Interval', 'IntervalIndex', 'MultiIndex', 
+'NaT', 'Panel', 'Panel4D', 'Period', 'PeriodIndex', 'RangeIndex', 'Series', 'SparseArray', 'SparseDataFrame', 'SparseList', 
+'SparseSeries', 'Term', 'TimeGrouper', 'Timedelta', 'TimedeltaIndex', 'Timestamp', 'UInt64Index', 'WidePanel', 
+'_DeprecatedModule', '__builtins__', '__doc__', '__docformat__', '__file__', '__name__', '__package__', '__path__', 
+'__version__', '_hashtable', '_lib', '_libs', '_np_version_under1p10', '_np_version_under1p11', '_np_version_under1p12', 
+'_np_version_under1p8', '_np_version_under1p9', '_tslib', '_version', 'api', 'bdate_range', 'compat', 'concat', 'core', 
+'crosstab', 'cut', 'date_range', 'datetime', 'datetools', 'describe_option', 'errors', 'eval', 'ewma', 'ewmcorr', 
+'ewmcov', 'ewmstd', 'ewmvar', 'ewmvol', 'expanding_apply', 'expanding_corr', 'expanding_count', 'expanding_cov', 
+'expanding_kurt', 'expanding_max', 'expanding_mean', 'expanding_median', 'expanding_min', 'expanding_quantile', 
+'expanding_skew', 'expanding_std', 'expanding_sum', 'expanding_var', 'factorize', 'get_dummies', 'get_option', 
+'get_store', 'groupby', 'infer_freq', 'interval_range', 'io', 'isnull', 'json', 'lib', 'lreshape', 'match', 
+'melt', 'merge', 'merge_asof', 'merge_ordered', 'notnull', 'np', 'offsets', 'option_context', 'options', 
+'ordered_merge', 'pandas', 'parser', 'period_range', 'pivot', 'pivot_table', 'plot_params', 'plotting', '
+pnow', 'qcut', 'read_clipboard', 'read_csv', 'read_excel', 'read_feather', 'read_fwf', 'read_gbq', 'read_hdf', 
+'read_html', 'read_json', 'read_msgpack', 'read_pickle', 'read_sas', 'read_sql', 'read_sql_query', 
+'read_sql_table', 'read_stata', 'read_table', 'reset_option', 'rolling_apply', 'rolling_corr', 'rolling_count', 
+'rolling_cov', 'rolling_kurt', 'rolling_max', 'rolling_mean', 'rolling_median', 'rolling_min', 'rolling_quantile', 
+'rolling_skew', 'rolling_std', 'rolling_sum', 'rolling_var', 'rolling_window', 'scatter_matrix', 'set_eng_float_format', 
+'set_option', 'show_versions', 'stats', 'test', 'testing', 'timedelta_range', 'to_datetime', 'to_msgpack', 
+'to_numeric', 'to_pickle', 'to_timedelta', 'tools', 'tseries', 'tslib', 'unique', 'util', 'value_counts', 'wide_to_long']
+-----------------------------------
+
