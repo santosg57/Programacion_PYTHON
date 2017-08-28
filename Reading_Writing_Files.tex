@@ -1,0 +1,171 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\newcommand\nombre{L. Gonz\'alez-Santos}
+\newcommand\depto{Mapeo de Funci\'on Cerebral}
+\newcommand\instituto{Instituto de Neurobiolog\'ia, UNAM}
+\newcommand\correo{lgs@unam.mx}
+\newcommand\subtitulo{Lectura y escritura de archivos}
+
+\newcommand\iniciales{INB-UNAM}
+
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[CLASE-1]{Introducci\'on al Lenguaje de Programaci\'on en \\
+PYTHON \\
+{\small \subtitulo}} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author[santosg572@gmail.com]{\nombre} % Your name
+\institute[\iniciales] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Depto. \depto \\ 
+\instituto \\ %the title page
+\medskip
+\textit{\correo} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Lectura y escritura de archivos} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{Lectura y escritura de archivos} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Lectura y escritura de archivos}
+
+\textbf{open()} regresa un objeto de tipo archivo, y su formato es:
+
+\begin{center}
+\textbf{open(filename, mode)}
+\end{center}
+
+\textbf{mode} puede ser:
+
+\hfill
+
+\textbf{'r'}  Cuando el archivo s\'olo es de lectura
+
+\textbf{'w'} Cuando el archivo es s\'olo es de escritura
+
+\textbf{'a'} Abre el archivo para agregar al final
+
+\textbf{'r+'} Abre el archivo para leer y escribir al mismo tiempo. 
+
+\end{frame}
+
+\begin{frame}
+\frametitle{M\'etodos de los objetos de archivo}
+
+\textbf{f.read(size)}, lee una cantidad de datos y los devuelve como una cadena. \textbf{size} es un argumento num\'erico opcional.
+
+\hfill
+Si el final del archivo ha sido alcanzado, f.read() regresara el string vacio, f.read() devolver\'a una cadena vac\'ia ("").
+
+\hfill
+
+$>>>$ f.read()
+
+#'This is the entire file.\n'
+
+$>>>$ f.read()
+
+#''
+
+\end{frame}
+
+\end{document} 
